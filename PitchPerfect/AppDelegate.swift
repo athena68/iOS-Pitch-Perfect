@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PitchPerfect
 //
-//  Created by TuanNT7.DAP on 26/09/2022.
+//  Created by Tuan on 26/09/2022.
 //
 
 import UIKit

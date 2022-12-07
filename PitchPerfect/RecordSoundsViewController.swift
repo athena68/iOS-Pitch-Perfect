@@ -2,7 +2,7 @@
 //  RecordSoundsViewController.swift
 //  PitchPerfect
 //
-//  Created by TuanNT7.DAP on 26/09/2022.
+//  Created by Tuan on 26/09/2022.
 //
 
 import UIKit
@@ -22,10 +22,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButtion.isEnabled = false;
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
     @IBAction func recordAudio(_ sender: Any) {
         configUIRecordStopButton(true)
         
@@ -70,16 +66,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     func configUIRecordStopButton(_ recordingState: Bool) {
-        switch(recordingState) {
-        case true:
-            recordingLabel.text = "Recording in Progress"
-            stopRecordingButtion.isEnabled = true;
-            recordButton.isEnabled = false
-        case false:
-            recordingLabel.text = "Tap To Record"
-            stopRecordingButtion.isEnabled = false;
-            recordButton.isEnabled = true
-        }
+        recordingLabel.text = recordingState ? "Recording in Progress" : "Tap To Record"
+        stopRecordingButtion.isEnabled = recordingState
+        recordButton.isEnabled = !recordingState
     }
 }
 
